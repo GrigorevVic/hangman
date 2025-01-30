@@ -1,0 +1,295 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.title {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 835px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+/* start picture hangman */
+
+.wrapper-hangman {
+    width: auto;
+    height: 500px;
+}
+
+.hangman {
+    position: relative;
+    min-width: 300px;
+}
+
+.vertical-long {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 5px;
+    height: 353px;
+    background: black;
+ 
+}
+
+.horizontal-bottom {
+    position: absolute;
+  
+    margin-top: 400px;
+    width: 100%;
+    height: 5px;
+    background: black;
+}
+
+.horizontal-top {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 200px;
+    height: 5px;
+    background: black;
+}
+
+.vertical-short {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 50px;
+    width: 5px;
+    height: 50px;
+    background: black;
+}
+
+.slanted-line {
+    position: absolute;
+    margin-left: 68px;
+    margin-top: 45px;
+    width: 5px;
+    height: 50px;
+    background: black;
+    transform: rotate(45deg);
+}
+
+.head {
+    position: absolute;
+    margin-left: 223px;
+    margin-top: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid black;
+}
+
+.body {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 155px;
+    width: 5px;
+    height: 60px;
+    background: black;
+}
+
+.left-arm {
+    position: absolute;
+    margin-left: 235px;
+    margin-top: 153px;
+    width: 5px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: black;
+}
+
+.right-arm {
+    position: absolute;
+    margin-left: 265px;
+    margin-top: 153px;
+    width: 5px;
+    height: 40px;
+    transform: rotate(-45deg);
+    background: black;
+}
+
+.left-foot {
+    position: absolute;
+    margin-left: 235px;
+    margin-top: 209px;
+    width: 5px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: black;
+}
+
+.right-foot {
+    position: absolute;
+    margin-left: 265px;
+    margin-top: 209px;
+    width: 5px;
+    height: 40px;
+    transform: rotate(-45deg);
+    background: black;
+}
+
+.title-game {
+    position: absolute;
+    margin-top: 420px;
+    margin-left: 60px;
+}
+
+/* end picture hangman */
+
+
+.playfield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wrapper-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.secret-word {
+  padding: 5px;
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(114, 100, 100)
+}
+
+.hint {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.letters {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.keyboard {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.disable {
+  background-color: orange;
+  cursor: auto;
+}
+
+/* модальное окно */
+
+.modalBackground {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+
+.modal-active {
+    display: block;
+}
+
+
+.modalActive {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    top: calc(50% - 250px);
+    left: calc(50% - 175px);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    cursor: default;
+    padding: 20px 20px;
+}
+
+
+.modalWindow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    background: rgb(112, 99, 99);
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.play-again {
+    font-size: 22px;
+    margin: 0;
+}
+
+.press {
+    font-size: 14px;
+    color: rgb(39, 36, 36);
+    margin: 0;
+}
+
+
+.scroll-menu-disabled {
+    overflow-y: hidden;
+}
+
+@media (hover:hover) {
+    .button:hover {
+        background: rgb(221, 204, 204);
+        transition: 0.5s;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+.container-750 {
+    justify-content: center;
+}
+
+.playfield-750 {
+    width: 100%;
+}
+
+}
+
